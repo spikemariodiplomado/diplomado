@@ -13,6 +13,7 @@ import { FormEmpresaComponent } from './components/admin-empresa/form-empresa/fo
 import { ListadoRelacionesComponent } from './components/relacion-empresa/listado-relaciones/listado-relaciones.component';
 import { FormRelacionComponent } from './components/relacion-empresa/form-relacion/form-relacion.component';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     AppRoutingModule,
     DataTablesModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
