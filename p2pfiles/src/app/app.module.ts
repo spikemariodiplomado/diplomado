@@ -14,6 +14,9 @@ import { ListadoRelacionesComponent } from './components/relacion-empresa/listad
 import { FormRelacionComponent } from './components/relacion-empresa/form-relacion/form-relacion.component';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListadoEmpresasComponent,
     FormEmpresaComponent,
     ListadoRelacionesComponent,
-    FormRelacionComponent
+    FormRelacionComponent,
+    FooterComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <!-- Header -->
-<app-header [showMenu]="false" [txtHeader]="'Bienvenido'"></app-header>
+<app-header [showMenu]="true" [txtHeader]="''"></app-header>
 
 <!-- Main -->
 <section id="main" class="wrapper">
@@ -7,7 +7,8 @@
     <div class="content">
       <div class="row justify-content-md-center">
         <div class="col-6">
-          <form [formGroup]="loginForm" (ngSubmit)="validateUser()" #ngForm="ngForm">
+          <!-- TODO -->
+          <!-- <form [formGroup]="homeForm" (ngSubmit)="validateHome()" #ngForm="ngForm">
             <header>
               <h2>Login</h2>
             </header>
@@ -33,7 +34,7 @@
               <a href="#">Recordar clave</a>
             </div>
             
-          </form>
+          </form> -->
         </div> 
       </div>     
     </div>
