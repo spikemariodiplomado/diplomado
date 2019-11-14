@@ -1,7 +1,10 @@
 <header id="header">
   <a class="logo" href="index.html">P2P</a>
   <nav *ngIf="showMenu">
-    <a [matMenuTriggerFor]="menu">Menu</a>
+    <a [matMenuTriggerFor]="menu">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+      Menu
+    </a>
     <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
     <mat-menu #menu="matMenu">
       <a mat-menu-item *ngIf="listarEmpresas" href="empresas">Listar Empresas</a>
