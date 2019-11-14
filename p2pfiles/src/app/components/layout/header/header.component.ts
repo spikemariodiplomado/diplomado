@@ -10,6 +10,8 @@ export class HeaderComponent implements OnInit {
   @Input() showMenu: boolean;
   @Input() txtHeader: string;
 
+  listarEmpresas: boolean = true;
+
   constructor() { }
 
   ngOnInit() {

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { EmpresasService } from 'src/app/services/empresas.service';
 
 @Component({
   selector: 'app-listado-empresas',
@@ -10,7 +11,7 @@ export class ListadoEmpresasComponent implements OnInit {
 
   dtOptions: any = {};
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private empresaSrv: EmpresasService) { }
 
   ngOnInit() {
     this.dtOptions = {

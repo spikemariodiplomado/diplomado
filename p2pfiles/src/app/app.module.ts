@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MatMenuModule } from '@angular/material/menu'; 
+import { BrowserAnimationsModule } from  '@angular/platform-browser/animations';
+
 import { DataTablesModule } from 'angular-datatables';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,10 +16,12 @@ import { FormEmpresaComponent } from './components/admin-empresa/form-empresa/fo
 import { ListadoRelacionesComponent } from './components/relacion-empresa/listado-relaciones/listado-relaciones.component';
 import { FormRelacionComponent } from './components/relacion-empresa/form-relacion/form-relacion.component';
 import { HttpModule } from '@angular/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { importType } from '@angular/compiler/src/output/output_ast';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,11 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule,
     DataTablesModule,
     HttpModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatMenuModule,
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
