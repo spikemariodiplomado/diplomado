@@ -2846,3 +2846,9 @@ body.is-menu-visible #menu {
   margin: auto;
   width: 90%;
 }
+
+.justify-content-end {
+  -ms-flex-pack: end !important;
+  justify-content: flex-end !important;
+  margin-bottom: 10px;
+}

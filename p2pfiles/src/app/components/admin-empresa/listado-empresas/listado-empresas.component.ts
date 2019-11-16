@@ -60,4 +60,8 @@ export class ListadoEmpresasComponent implements OnInit, AfterViewInit {
     return body.data || {};
   }
 
+  public btnNuevo() {
+    this.router.navigate(['/empresa']);
+  }
+
 }
