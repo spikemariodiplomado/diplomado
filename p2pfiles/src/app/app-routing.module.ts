@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'empresas', component: ListadoEmpresasComponent },
   { path: 'home', component: HomeComponent },
   { path: 'empresa', component: FormEmpresaComponent },
+  { path: 'empresa/:id', component: FormEmpresaComponent },
   { path: '**', component: LoginComponent }
 ];
 
