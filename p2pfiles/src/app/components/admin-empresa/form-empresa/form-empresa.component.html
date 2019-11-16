@@ -1,3 +1,34 @@
-<p>
-  form-empresa works!
-</p>
+<app-header [showMenu]="true"></app-header>
+
+<div class="content">
+  <div class="row justify-content-md-center">
+    <div class="col-12">
+      <div class="row justify-content-md-center">
+        <div class="col-6 col-md-4 ">
+          <header>
+            <h1 class="row justify-content-center"> Crear Empresa </h1>
+          </header>
+        </div>
+
+        <div class="col-10">
+          <form>
+            <div class="form-row">
+              <div class="col form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombreTxt" id="nombre" placeholder="Nombre" [(ngModel)]="nombreTxt">
+              </div>
+
+              <div class="col form-group">
+                <label for="direccion">Direccion</label>
+                <input type="text" name="direccionTxt" id="direccion" placeholder="Direccion" [(ngModel)]="direccionTXT">
+              </div>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+  
+<app-footer></app-footer>
