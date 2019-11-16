@@ -1,11 +1,11 @@
 export class Empresa {
     nit: string;
-    nombreEmpresa: string;
+    nombre: string;
     direccion: string;
     telefono: string;
     ciudad: string;
     contacto: string;
-    correoContacto: string;
+    correo: string;
     usuario: string;
     clave: string;
 }

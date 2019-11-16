@@ -1,34 +1,67 @@
-<app-header [showMenu]="true"></app-header>
+<app-header [showMenu]="true" [txtHeader]="'CREAR Empresa'"></app-header>
 
 <div class="content">
   <div class="row justify-content-md-center">
     <div class="col-12">
-      <div class="row justify-content-md-center">
-        <div class="col-6 col-md-4 ">
-          <header>
-            <h1 class="row justify-content-center"> Crear Empresa </h1>
-          </header>
-        </div>
+      <form>
+        <div class="form-row">
+              <div class="form-group col-md-6">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombreTxt" id="nombre" placeholder="Nombre" [(ngModel)]="nombreTxt">
+          </div>
 
-        <div class="col-10">
-          <form>
-            <div class="form-row">
-              <div class="col form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombreTxt" id="nombre" placeholder="Nombre" [(ngModel)]="nombreTxt">
-              </div>
+          
+          <div class="form-group col-md-6">
+            <label for="direccion">Direccion</label>
+            <input type="text" name="direccionTxt" id="direccion" placeholder="Direccion" [(ngModel)]="direccionTXT">
+          </div>
+          
 
-              <div class="col form-group">
-                <label for="direccion">Direccion</label>
-                <input type="text" name="direccionTxt" id="direccion" placeholder="Direccion" [(ngModel)]="direccionTXT">
+          <div class="form-group col-md-6">
+                  <label for="telefono">Telefono</label>
+              <input type="text" name="telefonoTxt" id="telefono" placeholder="Telefono" [(ngModel)]="telefonoTXT">
               </div>
-            </div>
-          </form>
+          
+
+          <div class="form-group col-md-6">
+                      <label for="ciudad">Ciudad</label>
+                  <input type="text" name="ciudadTxt" id="ciudad" placeholder="Ciudad"  [(ngModel)]="ciudadTXT">
+                  </div>
+          
+          <div class="form-group col-md-6">
+                          <label for="contacto">Contacto</label>
+                      <input type="text" name="contactoTxt" id="contacto" placeholder="Contacto" [(ngModel)]="contactoTXT">
+                      </div>
+
+          <div class="form-group col-md-6">
+                              <label for="correo">Correo</label>
+                          <input type="text" name="correoTxt" id="correo" placeholder="Correo" [(ngModel)]="correoTXT">
+                          </div>
+
+          <div class="form-group col-md-6">
+                                  <label for="usuario">Usuario</label>
+                              <input type="text" name="usuarioTxt" id="usuario" placeholder="Usuario" [(ngModel)]="usuarioTXT">
+                              </div>
+
+          <div class="form-group col-md-6">
+                                      <label for="password">Password</label>
+                                  <input type="password" name="claveTxt" id="password" placeholder="Password" [(ngModel)]="claveTXT">
+                                  </div>
+
+          <div class="form-group col-12">
+              <a routerLink="/user/login" class="form-control login-user">Do you have a company?</a>
+          </div>
+                                          
+          <div class="btn-toolbar justify-content-between">                               
+              <button type="button" (click)="btnSubmit()" style="margin: 10px" class="btn btn-primary btn-lg">Aceptar</button>
+              <button type="button" style="margin: 10px" class="btn btn-primary btn-lg">Actualizar</button>
+              <button type="button" style="margin: 10px" class="btn btn-primary btn-lg">Eliminar</button>
+          </div>
+
         </div>
-        </div>
-      </div>
-    </div> 
-  </div>
+      </form>
+    </div>
+  </div> 
 </div>
-  
+      
 <app-footer></app-footer>

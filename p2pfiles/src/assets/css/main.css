@@ -2096,7 +2096,7 @@ ul.icons {
   background-color: #111111;
   color: rgba(255, 255, 255, 0.5);
   padding: 2rem 0 0rem 0 ; 
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 }
