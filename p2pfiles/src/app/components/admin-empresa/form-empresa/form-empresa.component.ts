@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpresasService } from 'src/app/services/empresas.service';
 import { Empresa } from 'src/app/datamodels/empresa';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class FormEmpresaComponent implements OnInit {
   claveTXT: string;
   //Continua agregando variables para mapear cada atributo de la entidad Empresa
 
-  constructor(private empresasService: EmpresasService) { }
+  constructor(private empresasService: EmpresasService, private router: Router) { }
 
   ngOnInit() {
     this.getEmpresas();
@@ -57,6 +58,12 @@ console.log(empresa);
 
   public btnSubmit() {
     this.empresasService.createEmpresa(this.newEmpresa())
+    this.router.navigateByUrl('/empresas');
+  }
+
+  public btnCancel() {
+    // redireccionar a empresas
+    this.router.navigateByUrl('/empresas');
   }
 
 }
