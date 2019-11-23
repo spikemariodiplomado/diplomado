@@ -43,7 +43,7 @@ export class ListaComponent implements OnInit, AfterViewInit {
         }
       ],
       dom: 'Bfrtip',
-      buttons: ['excel'],
+      buttons: ['Descargar'],
       select: true
     };     
   }
