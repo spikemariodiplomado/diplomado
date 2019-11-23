@@ -66,7 +66,7 @@ export class ListaComponent implements OnInit, AfterViewInit {
     return body.data || {};
   }
 
-  public btnSubir() {
+  public btnNuevo() {
     this.router.navigate(['/documento']);
   }
 
