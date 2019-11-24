@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpresasService } from 'src/app/services/empresas.service';
 import { Empresa } from 'src/app/datamodels/empresa';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -21,18 +22,24 @@ export class FormEmpresaComponent implements OnInit {
   correoTXT: string;
   usuarioTXT: string;
   claveTXT: string;
-  //Continua agregando variables para mapear cada atributo de la entidad Empresa
 
-  constructor(private empresasService: EmpresasService) { }
+  snapshotParam = "initial value";
+  subscribedParam = "initial value";
+
+  constructor(private empresasService: EmpresasService, private readonly route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getEmpresas();
+    this.snapshotParam = this.route.snapshot.paramMap.get("id");
+
+    if (this.snapshotParam != null) {
+      this.getEmpresa();
+    }
+
   }
 
-  private getEmpresas(): void {
+  private getEmpresa(): void {
     this.empresasService.getEmpresas().subscribe(
       (data) => {
-        console.log(data);
         this.listEmpresas = data;
       }
     );
@@ -49,9 +56,7 @@ export class FormEmpresaComponent implements OnInit {
     empresa.correo = this.correoTXT;
     empresa.usuario = this.usuarioTXT;
     empresa.clave = this.claveTXT;
-    //continua agregando los valores de la propiedad del objeto Empresa, según los capturado en los campos
-    // del formulario
-console.log(empresa);
+    
     return empresa;
   }
 
