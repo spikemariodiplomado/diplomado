@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpresasService } from 'src/app/services/empresas.service';
 import { Empresa } from 'src/app/datamodels/empresa';
-import { ActivatedRoute } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-empresa',
@@ -26,7 +25,7 @@ export class FormEmpresaComponent implements OnInit {
   snapshotParam = "initial value";
   subscribedParam = "initial value";
 
-  constructor(private empresasService: EmpresasService, private readonly route: ActivatedRoute) { }
+  constructor(private empresasService: EmpresasService, private router: Router, private readonly route: ActivatedRoute) { }
 
   ngOnInit() {
     this.snapshotParam = this.route.snapshot.paramMap.get("id");
@@ -62,6 +61,12 @@ export class FormEmpresaComponent implements OnInit {
 
   public btnSubmit() {
     this.empresasService.createEmpresa(this.newEmpresa())
+    this.router.navigateByUrl('/empresas');
+  }
+
+  public btnCancel() {
+    // redireccionar a empresas
+    this.router.navigateByUrl('/empresas');
   }
 
 }
