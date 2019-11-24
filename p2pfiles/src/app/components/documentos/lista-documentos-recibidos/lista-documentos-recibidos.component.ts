@@ -4,11 +4,11 @@ import { DocumentosService } from 'src/app/services/documentos.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-listado-documentos-enviados',
-  templateUrl: './listado-documentos-enviados.component.html',
-  styleUrls: ['./listado-documentos-enviados.component.css']
+  selector: 'app-lista-documentos-recibidos',
+  templateUrl: './lista-documentos-recibidos.component.html',
+  styleUrls: ['./lista-documentos-recibidos.component.css']
 })
-export class ListaComponent implements OnInit, AfterViewInit {
+export class ListaDocumentosRecibidosComponent implements OnInit, AfterViewInit {
 
   dtOptions: any = {};
 
@@ -16,7 +16,7 @@ export class ListaComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.dtOptions = {
-      ajax: '/assets/data/data.json',
+      ajax: '/assets/data/datadocenv.json',
       columns: [
         {
           title: 'ID',
@@ -33,17 +33,17 @@ export class ListaComponent implements OnInit, AfterViewInit {
         }, {
           title: 'Estado',
           data: 'estado'
-        },{
+        }, {
           data: 'id',
           title: 'Action',
           render: function (data: any, type: any, full: any) {
             // return '<button>Ver Detalle</button>';
-            return '<a href="/documento/'+data+'"><span>Detalle</span></a>'
+            return '<a href="/dwndocumento/'+data+'"><span>Descargar</span></a>'
           }
         }
       ],
       dom: 'Bfrtip',
-      buttons: ['Descargar'],
+      buttons: ['excel'],
       select: true
     };     
   }
@@ -67,7 +67,7 @@ export class ListaComponent implements OnInit, AfterViewInit {
   }
 
   public btnNuevo() {
-    this.router.navigate(['/documento']);
+    this.router.navigate(['/enviardocumento']);
   }
 
 }

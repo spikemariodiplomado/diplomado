@@ -11,6 +11,8 @@ export class HeaderComponent implements OnInit {
   @Input() txtHeader: string;
 
   listarEmpresas: boolean = true;
+  listarDocumentosEnviados: boolean = true;
+  listarDocumentosRecibidos: boolean = true;
 
   constructor() { }
 

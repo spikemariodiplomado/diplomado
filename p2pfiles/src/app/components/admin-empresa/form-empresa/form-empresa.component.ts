@@ -9,9 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./form-empresa.component.css']
 })
 export class FormEmpresaComponent implements OnInit {
-
-  // listEmpresas: Array<Empresa> = [];
-  listEmpresas: Array<any> = [];
   
   nombreTxt: string;
   direccionTXT: string;
@@ -22,24 +19,32 @@ export class FormEmpresaComponent implements OnInit {
   usuarioTXT: string;
   claveTXT: string;
 
-  snapshotParam = "initial value";
-  subscribedParam = "initial value";
+  snapshotIdParam = "initial value";
+  showUpdate: boolean = false;
 
   constructor(private empresasService: EmpresasService, private router: Router, private readonly route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.snapshotParam = this.route.snapshot.paramMap.get("id");
+    this.snapshotIdParam = this.route.snapshot.paramMap.get("id");
 
-    if (this.snapshotParam != null) {
+    if (this.snapshotIdParam != null) {
+      this.showUpdate = true;
       this.getEmpresa();
     }
 
   }
 
   private getEmpresa(): void {
-    this.empresasService.getEmpresas().subscribe(
-      (data) => {
-        this.listEmpresas = data;
+    this.empresasService.getEmpresa(this.snapshotIdParam).subscribe(
+      (empresa) => {
+        this.nombreTxt = empresa.nombre
+        this.direccionTXT = empresa.direccion;
+        this.telefonoTXT = empresa.telefono;
+        this.ciudadTXT = empresa.ciudad;
+        this.contactoTXT = empresa.contacto;
+        this.correoTXT = empresa.correo;
+        this.usuarioTXT = empresa.usuario;
+        this.claveTXT = empresa.clave;
       }
     );
   }
@@ -61,11 +66,14 @@ export class FormEmpresaComponent implements OnInit {
 
   public btnSubmit() {
     this.empresasService.createEmpresa(this.newEmpresa())
-    this.router.navigateByUrl('/empresas');
+    this.redirectToList();
   }
 
   public btnCancel() {
-    // redireccionar a empresas
+    this.redirectToList();
+  }
+
+  private redirectToList() {
     this.router.navigateByUrl('/empresas');
   }
 

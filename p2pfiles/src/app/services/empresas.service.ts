@@ -13,8 +13,12 @@ export class EmpresasService {
   constructor(private httpClient: HttpClient) { }
 
   // public getEmpresas(): Observable<Array<Empresa>> {
-  public getEmpresas(): Observable<any> {
-    return this.httpClient.get<any>(this.apiUrl);
+  public getEmpresas(): Observable<Array<Empresa>> {
+    return this.httpClient.get<Array<Empresa>>(this.apiUrl);
+  }
+
+  public getEmpresa(id: string): Observable<Empresa> {
+    return this.httpClient.get<any>(`${this.apiUrl}/empresa/${id}`);
   }
 
   //create - post
