@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmpresasService } from 'src/app/services/empresas.service';
 import { Empresa } from 'src/app/datamodels/empresa';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-empresa',
@@ -22,12 +23,15 @@ export class FormEmpresaComponent implements OnInit {
   usuarioTXT: string;
   claveTXT: string;
 
+  companyForm: FormGroup;
+
   snapshotParam = "initial value";
   subscribedParam = "initial value";
 
   constructor(private empresasService: EmpresasService, private router: Router, private readonly route: ActivatedRoute) { }
 
   ngOnInit() {
+    this._InitCompanyForm();
     this.snapshotParam = this.route.snapshot.paramMap.get("id");
 
     if (this.snapshotParam != null) {
@@ -59,14 +63,34 @@ export class FormEmpresaComponent implements OnInit {
     return empresa;
   }
 
-  public btnSubmit() {
-    this.empresasService.createEmpresa(this.newEmpresa())
-    this.router.navigateByUrl('/empresas');
+  public validateUser() {
+    if (this.companyForm.valid) {
+      this.empresasService.createEmpresa(this.newEmpresa())
+      this.router.navigateByUrl('/empresas');
+    }
   }
 
   public btnCancel() {
     // redireccionar a empresas
     this.router.navigateByUrl('/empresas');
+  }
+
+  public IsValid(control: string): boolean {
+    return this.companyForm.get(control).valid;
+  }
+
+
+  private _InitCompanyForm() {
+    this.companyForm = this.formBuilder.group({
+      nombreTxt: ['', [Validators.required]],
+      direccionTxt: ['', [Validators.required]],
+      telefonoTxt: ['', [Validators.required]],
+      ciudadTxt: ['', [Validators.required]],
+      contactoTxt: ['', [Validators.required]],
+      correoTxt: ['', [Validators.required,Validators.pattern("^[0-9]*$")]],
+      usuarioTxt: ['', [Validators.required]],
+      claveTxt: ['', [Validators.required, Validators.email]]
+    });
   }
 
 }

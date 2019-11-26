@@ -3,57 +3,81 @@
 <div class="content">
   <div class="row justify-content-md-center">
     <div class="col-12">
-      <form>
+      <form [formGroup]="companyForm" (ngSubmit)="validateUser()" #ngForm="ngForm">
         <div class="form-row">
               <div class="form-group col-md-6">
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombreTxt" id="nombre" placeholder="Nombre" [(ngModel)]="nombreTxt">
+            <input type="text" name="nombreTxt" id="nombre" placeholder="Nombre" formControlName="nombreTxt" [(ngModel)]="nombreTxt" [ngClass]="{'is-invalid': ngForm.submitted && !IsValid('nombreTxt')}">
+            <div class="invalid-feedback">
+              por favor diligencie el campo nombre
+            </div>
           </div>
 
           
           <div class="form-group col-md-6">
             <label for="direccion">Direccion</label>
-            <input type="text" name="direccionTxt" id="direccion" placeholder="Direccion" [(ngModel)]="direccionTXT">
+            <input type="text" name="direccionTxt" id="direccion" placeholder="Direccion" formControlName="direccionTXT" [(ngModel)]="direccionTXT" [ngClass]="{'is-invalid': ngForm.submitted && !IsValid('direccionTXT')}">
+            <div class="invalid-feedback">
+              por favor diligencie el campo direccion
+            </div>
           </div>
           
 
           <div class="form-group col-md-6">
                   <label for="telefono">Telefono</label>
-              <input type="text" name="telefonoTxt" id="telefono" placeholder="Telefono" [(ngModel)]="telefonoTXT">
-              </div>
+              <input type="text" name="telefonoTxt" id="telefono" placeholder="Telefono" formControlName="telefonoTXT" [(ngModel)]="telefonoTXT" [ngClass]="{'is-invalid': ngForm.submitted && !IsValid('telefonoTXT')}">
+              <div class="invalid-feedback">
+                por favor diligencie el campo telefono
+              </div>  
+            </div>
           
 
           <div class="form-group col-md-6">
                       <label for="ciudad">Ciudad</label>
-                  <input type="text" name="ciudadTxt" id="ciudad" placeholder="Ciudad"  [(ngModel)]="ciudadTXT">
-                  </div>
+                  <input type="text" name="ciudadTxt" id="ciudad" placeholder="Ciudad" formControlName="ciudadTXT" [(ngModel)]="ciudadTXT" [ngClass]="{'is-invalid': ngForm.submitted && !IsValid('ciudadTXT')}">
+                  <div class="invalid-feedback">
+                    por favor diligencie el campo ciudad
+                  </div>  
+                </div>
           
           <div class="form-group col-md-6">
                           <label for="contacto">Contacto</label>
-                      <input type="text" name="contactoTxt" id="contacto" placeholder="Contacto" [(ngModel)]="contactoTXT">
-                      </div>
+                      <input type="text" name="contactoTxt" id="contacto" placeholder="Contacto" formControlName="contactoTXT" [(ngModel)]="contactoTXT" [ngClass]="{'is-invalid': ngForm.submitted && !IsValid('contactoTXT')}">
+                      <div class="invalid-feedback">
+                        por favor diligencie el campo contacto
+                      </div>  
+                    </div>
 
           <div class="form-group col-md-6">
                               <label for="correo">Correo</label>
-                          <input type="text" name="correoTxt" id="correo" placeholder="Correo" [(ngModel)]="correoTXT">
-                          </div>
+                          <input type="text" name="correoTxt" id="correo" placeholder="Correo" formControlName="correoTXT" [(ngModel)]="correoTXT" [ngClass]="{'is-invalid': ngForm.submitted && !IsValid('correoTXT')}">
+                          <div class="invalid-feedback">
+                            por favor diligencie el campo correo
+                          </div>  
+                        </div>
 
           <div class="form-group col-md-6">
                                   <label for="usuario">Usuario</label>
-                              <input type="text" name="usuarioTxt" id="usuario" placeholder="Usuario" [(ngModel)]="usuarioTXT">
-                              </div>
+                              <input type="text" name="usuarioTxt" id="usuario" placeholder="Usuario" formControlName="usuarioTXT" [(ngModel)]="usuarioTXT" [ngClass]="{'is-invalid': ngForm.submitted && !IsValid('usuarioTXT')}">
+                              <div class="invalid-feedback">
+                                por favor diligencie el campo usuario
+                              </div>  
+                            </div>
 
           <div class="form-group col-md-6">
                                       <label for="password">Password</label>
-                                  <input type="password" name="claveTxt" id="password" placeholder="Password" [(ngModel)]="claveTXT">
-                                  </div>
+                                  <input type="password" name="claveTxt" id="password" placeholder="Password" formControlName="claveTXT" [(ngModel)]="claveTXT" [ngClass]="{'is-invalid': ngForm.submitted && !IsValid('claveTXT')}">
+                                  <div class="invalid-feedback">
+                                    por favor diligencie el campo password
+                                  </div> 
+                                </div>
 
           <div class="form-group col-12">
               <a routerLink="/user/login" class="form-control login-user">Do you have a company?</a>
           </div>
                                           
           <div class="btn-toolbar justify-content-between">                               
-              <button type="button" (click)="btnSubmit()" style="margin: 10px" class="btn btn-success btn-lg">Aceptar</button>
+              <button type="submit" style="margin: 10px" class="btn btn-success btn-lg">Aceptar</button>
               <button type="button" style="margin: 10px" class="btn btn-success btn-lg">Actualizar</button>
               <button type="button" style="margin: 10px" class="btn btn-danger btn-lg">Eliminar</button>
               <button type="button" (click)="btnCancel()" style="margin: 10px" class="btn btn-warning btn-lg">Cancelar</button>
