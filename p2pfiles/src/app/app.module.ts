@@ -22,6 +22,8 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { importType } from '@angular/compiler/src/output/output_ast';
+import { ListaDocumentosEnviadosComponent } from './components/documentos/lista-documentos-enviados/lista-documentos-enviados.component';
+import { ListaDocumentosRecibidosComponent } from './components/documentos/lista-documentos-recibidos/lista-documentos-recibidos.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { importType } from '@angular/compiler/src/output/output_ast';
     FormRelacionComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ListaDocumentosEnviadosComponent,
+    ListaDocumentosRecibidosComponent
   ],
   imports: [
     BrowserModule,

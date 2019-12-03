@@ -1,0 +1,32 @@
+{
+    "data": [
+      {
+        "id": 860,
+        "nombreEmpresaEnvio": "Mic",
+        "fecha": "2019-11-01",
+        "hora": "20:00:00",
+        "estado": "Enviado"
+      },
+      {
+        "id": 870,
+        "nombreEmpresaEnvio": "Punto Blanco",
+        "fecha": "2019-11-01",
+        "hora": "21:00:00",
+        "estado": "Enviado"
+      },
+      {
+        "id": 590,
+        "nombreEmpresaEnvio": "Totto",
+        "fecha": "2019-11-01",
+        "hora": "22:00:00",
+        "estado": "Enviado"
+      },
+      {
+        "id": 590,
+        "nombreEmpresaEnvio": "Totto",
+        "fecha": "2019-11-01",
+        "hora": "22:01:00",
+        "estado": "Enviado"
+      }
+    ]
+  }

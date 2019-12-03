@@ -77,9 +77,9 @@
           </div>
                                           
           <div class="btn-toolbar justify-content-between">                               
-              <button type="submit" style="margin: 10px" class="btn btn-success btn-lg">Aceptar</button>
-              <button type="button" style="margin: 10px" class="btn btn-success btn-lg">Actualizar</button>
-              <button type="button" style="margin: 10px" class="btn btn-danger btn-lg">Eliminar</button>
+              <button type="submit" *ngIf="!showUpdate" (click)="btnSubmit()" style="margin: 10px" class="btn btn-success btn-lg">Aceptar</button>
+              <button type="button" *ngIf="showUpdate" (click)="btnSubmit()" style="margin: 10px" class="btn btn-success btn-lg">Actualizar</button>
+              <button type="button" *ngIf="showUpdate" style="margin: 10px" class="btn btn-danger btn-lg">Eliminar</button>
               <button type="button" (click)="btnCancel()" style="margin: 10px" class="btn btn-warning btn-lg">Cancelar</button>
           </div>
 
