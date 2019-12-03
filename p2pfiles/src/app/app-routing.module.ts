@@ -7,19 +7,20 @@ import { FormEmpresaComponent } from './components/admin-empresa/form-empresa/fo
 import { ListaDocumentosEnviadosComponent } from './components/documentos/lista-documentos-enviados/lista-documentos-enviados.component';
 import { FormEnvioComponent } from './components/documentos/form-envio/form-envio.component';
 import { ListaDocumentosRecibidosComponent } from './components/documentos/lista-documentos-recibidos/lista-documentos-recibidos.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'empresas', component: ListadoEmpresasComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'empresa', component: FormEmpresaComponent },
-  { path: 'empresa/:id', component: FormEmpresaComponent },
-  { path: 'documentosenviados', component: ListaDocumentosEnviadosComponent },
-  { path: 'documentosrecibidos', component: ListaDocumentosRecibidosComponent },
-  { path: 'enviardocumento', component: FormEnvioComponent },
-  { path: 'documento/:id', component: FormEnvioComponent },
-  { path: 'dwndocumento/:id', component: FormEnvioComponent },
-  { path: '**', component: LoginComponent }
+  { path: '', component: LoginComponent, canActivate: [AuthGuard] },
+  { path: 'empresas', component: ListadoEmpresasComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'empresa', component: FormEmpresaComponent, canActivate: [AuthGuard] },
+  { path: 'empresa/:id', component: FormEmpresaComponent, canActivate: [AuthGuard] },
+  { path: 'documentosenviados', component: ListaDocumentosEnviadosComponent, canActivate: [AuthGuard] },
+  { path: 'documentosrecibidos', component: ListaDocumentosRecibidosComponent, canActivate: [AuthGuard] },
+  { path: 'enviardocumento', component: FormEnvioComponent, canActivate: [AuthGuard] },
+  { path: 'documento/:id', component: FormEnvioComponent, canActivate: [AuthGuard] },
+  { path: 'dwndocumento/:id', component: FormEnvioComponent, canActivate: [AuthGuard] },
+  { path: '**', component: LoginComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
